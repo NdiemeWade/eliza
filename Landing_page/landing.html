@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HotelBot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body><!-- ===================== NAVBAR ===================== -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">🏨</div>
+        HotelBot
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Fonctionnalités</a></li>
+        <li><a href="#demo">Démo</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#why">À propos</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#demo" class="btn btn-secondary" style="padding:10px 22px;font-size:0.88rem;">Voir la démo</a>
+        <a href="#cta" class="btn btn-primary" style="padding:10px 22px;font-size:0.88rem;">Commencer</a>
+      </div>
+    </div>
+  </div>
+</nav>
+ 
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <div class="deco-circle deco-1"></div>
+  <div class="deco-circle deco-2"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Left: Copy -->
+      <div class="hero-copy">
+        <div class="hero-badge">
+          <span class="live-dot"></span>
+          IA Conversationnelle · Hôtellerie
+        </div>
+        <h1>Automatisez vos <span class="accent">réservations</span> hôtelières avec HotelBot</h1>
+        <p class="hero-sub">Un chatbot intelligent qui réserve, répond et vend pour vous — 24h/24, 7j/7, sans jamais faire attendre.</p>
+        <div class="hero-btns">
+          <a href="#demo" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
+            Voir une démo
+          </a>
+          <a href="#cta" class="btn btn-ghost">Commencer gratuitement →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">+20%</div>
+            <div class="label">Réservations</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">-50%</div>
+            <div class="label">Temps de réponse</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">24/7</div>
+            <div class="label">Disponibilité</div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Right: Chat Mockup -->
+      <div class="hero-mockup float">
+        <div class="phone-shell">
+          <div class="phone-header">
+            <div class="bot-avatar">🤖</div>
+            <div class="bot-info">
+              <div class="name"> HotelBot</div>
+              <div class="status">En ligne — répond à l'instant</div>
+            </div>
+          </div>
+          <div class="chat-messages" id="heroChatMsgs">
+            <!-- Messages seront injectées par JS -->
+          </div>
+          <div class="chat-input-bar">
+            <span>Écrivez votre question…</span>
+            <div class="send-btn">
+              <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22 11 13M22 2L2 9l9 4"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===================== PAIN POINTS ===================== -->
+<section class="pain" id="pain">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge"><span class="dot"></span>Le problème</div>
+      <h2>Ce qui <span class="text-gradient">coûte cher</span> à votre hôtel</h2>
+      <p>Chaque heure sans réponse est une réservation perdue. Voici ce que vivent vos clients sans HotelBot.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pain-icon">⏳</div>
+        <h3>Temps d'attente excessif</h3>
+        <p>Vos clients attendent des heures une réponse. Ils réservent chez la concurrence.</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-1">
+        <div class="pain-icon">🔁</div>
+        <h3>Questions répétitives</h3>
+        <p>Prix, disponibilités, check-in… votre équipe passe 60% du temps sur les mêmes questions.</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-2">
+        <div class="pain-icon">📉</div>
+        <h3>Perte de réservations</h3>
+        <p>Sans réponse rapide la nuit ou le week-end, les prospects s'évaporent sans laisser de traces.</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-3">
+        <div class="pain-icon">⚙️</div>
+        <h3>Gestion manuelle inefficace</h3>
+        <p>Tableurs, emails, appels… un chaos de coordination qui épuise votre équipe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===================== SOLUTION ===================== -->
+<section id="solution">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge"><span class="dot"></span>La solution</div>
+      <h2>HotelBot <span class="text-gradient">résout tout ça</span> en un instant</h2>
+      <p>Un assistant IA entraîné spécifiquement pour l'hôtellerie. Intelligent, rapide, toujours disponible.</p>
+    </div>
+    <div class="solution-grid">
+      <div class="sol-card reveal">
+        <div class="sol-icon">⚡</div>
+        <div>
+          <h3>Réservation instantanée</h3>
+          <p>HotelBot guide le client de A à Z : disponibilités, chambres, paiement — sans intervention humaine.</p>
+        </div>
+      </div>
+      <div class="sol-card reveal reveal-delay-1">
+        <div class="sol-icon">💬</div>
+        <div>
+          <h3>Réponses automatiques intelligentes</h3>
+          <p>Toutes les questions fréquentes traitées en moins de 2 secondes, 24h/24.</p>
+        </div>
+      </div>
+      <div class="sol-card reveal reveal-delay-2">
+        <div class="sol-icon">🎯</div>
+        <div>
+          <h3>Personnalisation client</h3>
+          <p>HotelBot mémorise les préférences et propose des offres sur-mesure à chaque client.</p>
+        </div>
+      </div>
+      <div class="sol-card reveal reveal-delay-3">
+        <div class="sol-icon">🌍</div>
+        <div>
+          <h3>Disponible 24h/24, 7j/7</h3>
+          <p>Congés, nuits, weekends — HotelBot n'a jamais besoin de vacances.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===================== FEATURES ===================== -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.8);"><span class="dot" style="background:#818cf8;"></span>Fonctionnalités</div>
+      <h2>Tout ce dont votre hôtel <span style="color:#c4b5fd;">a besoin</span></h2>
+      <p>Six modules puissants, une seule intégration.</p>
+    </div>
+    <div class="features-grid reveal">
+      <div class="feat-card">
+        <div class="feat-num">01</div>
+        <div class="feat-icon">📅</div>
+        <h3>Réservation intelligente</h3>
+        <p>Gestion des disponibilités en temps réel, confirmation automatique, modification et annulation en libre-service.</p>
+        <span class="feat-tag">Temps réel</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">02</div>
+        <div class="feat-icon">🤖</div>
+        <h3>FAQ automatisée</h3>
+        <p>Base de connaissances entraînable. HotelBot répond à toutes les questions de votre établissement.</p>
+        <span class="feat-tag">NLP</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">03</div>
+        <div class="feat-icon">✨</div>
+        <h3>Recommandations personnalisées</h3>
+        <p>Suggestion de chambres, expériences et services en fonction du profil et de l'historique client.</p>
+        <span class="feat-tag">IA prédictive</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">04</div>
+        <div class="feat-icon">💎</div>
+        <h3>Upselling intelligent</h3>
+        <p>Promotion du spa, petit-déjeuner, surclassement — au bon moment, avec le bon message.</p>
+        <span class="feat-tag">Revenue+</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">05</div>
+        <div class="feat-icon">🔄</div>
+        <h3>Modification de réservation</h3>
+        <p>Le client modifie ses dates, ajoute des options ou annule — sans appel, sans email.</p>
+        <span class="feat-tag">Autonomie</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">06</div>
+        <div class="feat-icon">📡</div>
+        <h3>Multicanal</h3>
+        <p>Déployez HotelBot sur votre site, WhatsApp, Messenger et Instagram en quelques clics.</p>
+        <span class="feat-tag">Omnicanal</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===================== DEMO CONVERSATION ===================== -->
+<section class="demo" id="demo">
+  <div class="container">
+    <div class="demo-wrapper">
+      <div class="demo-text reveal">
+        <div class="badge"><span class="dot"></span>Démo interactive</div>
+        <h2>Voyez HotelBot <span class="text-gradient">en action</span></h2>
+        <p>Une vraie conversation, comme vos clients la vivent. Posez vos questions — HotelBot répond en temps réel.</p>
+        <div class="demo-feature">
+          <div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          <p>Réponse en moins de 1 seconde, 24h/24</p>
+        </div>
+        <div class="demo-feature">
+          <div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          <p>Compréhension du langage naturel en français</p>
+        </div>
+        <div class="demo-feature">
+          <div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          <p>Guidage étape par étape jusqu'à la réservation</p>
+        </div>
+        <div class="demo-feature">
+          <div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          <p>Suggestions d'upselling contextuelles</p>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="#cta" class="btn btn-primary">Essayer gratuitement →</a>
+        </div>
+      </div>
+ 
+      <div class="chat-demo-widget reveal reveal-delay-2">
+        <div class="chat-demo-header">
+          <div class="av">🏨</div>
+          <div>
+            <div class="title">HotelBot · HotelBot</div>
+            <div class="sub">Assistant Hôtel Le Lumière · En ligne</div>
+          </div>
+        </div>
+        <div class="demo-msgs" id="demoMsgs">
+          <div class="demo-msg bot">
+            <div class="bubble">Bonjour ! 👋 Je suis HotelBot, votre assistante à l'Hôtel Le Lumière. Comment puis-je vous aider aujourd'hui ?</div>
+            <div class="t">10:00</div>
+          </div>
+        </div>
+        <div class="demo-chips" id="demoChips">
+          <div class="chip" onclick="demoSend('Avez-vous des chambres disponibles ce week-end ?')">🗓 Disponibilités week-end</div>
+          <div class="chip" onclick="demoSend('Quels sont vos tarifs pour une suite ?')">💰 Tarifs suite</div>
+          <div class="chip" onclick="demoSend('Je voudrais réserver pour 2 personnes le 20 juin')">📋 Réserver une chambre</div>
+          <div class="chip" onclick="demoSend('Proposez-vous un service spa ?')">🧖 Services spa</div>
+        </div>
+        <div class="demo-input-row">
+          <input type="text" id="demoInput" placeholder="Posez votre question à HotelBot…" onkeydown="if(event.key==='Enter')demoSend()" />
+          <button onclick="demoSend()">
+            <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22 11 13M22 2L2 9l9 4"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===================== IMPACT ===================== -->
+<section class="impact" id="impact">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.8);"><span class="dot" style="background:#818cf8;"></span>Impact business</div>
+      <h2>Des résultats <span style="color:#c4b5fd;">mesurables</span></h2>
+      <p>Les hôtels qui adoptent HotelBot voient des améliorations dès les premières semaines.</p>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-card reveal">
+        <div class="impact-icon">📈</div>
+        <div class="impact-num" data-target="20">0%</div>
+        <div class="impact-label">de réservations en plus</div>
+      </div>
+      <div class="impact-card reveal reveal-delay-1">
+        <div class="impact-icon">⚡</div>
+        <div class="impact-num" data-target="50">0%</div>
+        <div class="impact-label">de temps de réponse en moins</div>
+      </div>
+      <div class="impact-card reveal reveal-delay-2">
+        <div class="impact-icon">⭐</div>
+        <div class="impact-num" data-target="98">0%</div>
+        <div class="impact-label">de satisfaction client</div>
+      </div>
+      <div class="impact-card reveal reveal-delay-3">
+        <div class="impact-icon">💰</div>
+        <div class="impact-num" data-target="30">0%</div>
+        <div class="impact-label">de réduction des coûts opérationnels</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===================== WHY US ===================== -->
+<section id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge"><span class="dot"></span>Pourquoi nous</div>
+      <h2>Ce qui nous <span class="text-gradient">distingue</span></h2>
+      <p>HotelBot n'est pas un chatbot générique. Il est conçu pour l'hôtellerie, du premier au dernier pixel.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">🧠</div>
+        <h3>IA de pointe</h3>
+        <p>Propulsé par les derniers modèles de langage, HotelBot comprend le contexte, les nuances et s'adapte à votre établissement.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">🔌</div>
+        <h3>Intégration en 5 minutes</h3>
+        <p>Un simple script à coller sur votre site. Compatible avec tous les PMS hôteliers du marché. Aucune compétence technique requise.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🔒</div>
+        <h3>Sécurisé & éthique</h3>
+        <p>Données hébergées en Europe, conformité RGPD garantie. Transparence totale sur les décisions de l'IA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===================== CTA FINAL ===================== -->
+<section class="cta-final" id="cta">
+  <div class="container" style="position:relative;z-index:1;">
+    <h2>Prêt à transformer votre hôtel ?</h2>
+    <p>Rejoignez les hôtels qui ont déjà fait confiance à HotelBot.<br>Installation gratuite · Sans engagement.</p>
+    <div class="cta-btns">
+      <a href="#" class="btn btn-white">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width:18px;height:18px;"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Démarrer maintenant
+      </a>
+      <a href="#demo" class="btn btn-ghost">Voir la démo d'abord</a>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="logo-icon">🏨</div>
+          HotelBot · HotelBot
+        </div>
+        <p>L'assistant IA qui révolutionne les réservations hôtelières. Intelligent, rapide, toujours disponible.</p>
+        <p style="margin-top:12px;font-size:0.78rem;color:rgba(255,255,255,0.25);">contact@hotelbot.com · +33 1 XX XX XX XX</p>
+      </div>
+      <div class="footer-col">
+        <h4>Produit</h4>
+        <ul>
+          <li><a href="#">Fonctionnalités</a></li>
+          <li><a href="#">Tarifs</a></li>
+          <li><a href="#">Démo</a></li>
+          <li><a href="#">Intégrations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Cas clients</a></li>
+          <li><a href="#">API</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="#">CGU</a></li>
+          <li><a href="#">Confidentialité</a></li>
+          <li><a href="#">RGPD</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 HotelBot · Tous droits réservés.</span>
+      <span class="team">Conçu avec ❤️ par  <strong>Ndiémé</strong></span>
+    </div>
+  </div>
+</footer>
+<script src="landing.js"></script>
+</body>
+</html>
