@@ -135,3 +135,80 @@ function demoSend(preset) {
     msgs.scrollTop = msgs.scrollHeight;
   }, 900 + Math.random() * 600);
 }
+
+
+// partie rajoutée pour la demo du bot
+
+const chatBox = document.getElementById("chatBox");  // recup des infos du chatbox dans la cons "chatBox"
+const userInput = document.getElementById("userInput");
+
+
+// fonction message qui ajoute un message dans le chat
+function addMessage(text, sender) {
+    const messageDiv = document.createElement("div"); // cree un nouvel espace div pour le message 
+    messageDiv.classList.add("message", sender); 
+
+    const bubbleDiv = document.createElement("div");  //  cree la bulle de message
+    bubbleDiv.classList.add("bubble");               
+    bubbleDiv.textContent = text;  // ajoute le dans text la bulle contenant le message 
+
+    messageDiv.appendChild(bubbleDiv); // met la bulle dans le message 
+    chatBox.appendChild(messageDiv); // ajoute la bulle dans la zone de chat
+    chatBox.scrollTop = chatBox.scrollHeight; // fait defiler les message vers le bas 
+}
+
+// permet d'attendre le chargement des reponses du bot
+async function sendMessage() {
+    const message = userInput.value.trim(); // recup le message de l'user
+                                            // texte saisi par l’utilisateur
+                                            //trim() enlève les espaces inutiles
+
+    if (!message) return; // si il y a rien on stop
+
+    addMessage(message, "user"); // Affiche le message dans le chat
+    userInput.value = "";  // vide le champ de saisie
+
+    addMessage("Le bot réfléchit...", "bot"); // chargement de la reponse du bot 
+
+    const loadingMessage = chatBox.lastChild; 
+
+    try {
+        const response = await fetch("/chat", {  // Envoie une requête HTTP POST vers chat
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ message: message }) // envoie en format json
+        });
+
+        const data = await response.json(); // Convertit la réponse du serveur en JSON
+
+        loadingMessage.remove();  //Supprime "Le bot réfléchit..."  
+        addMessage(data.reply, "bot");  // Affiche la vraie réponse
+
+    } catch (error) {
+        loadingMessage.remove();
+        addMessage("Erreur de connexion avec le serveur.", "bot");
+    }
+}
+
+async function resetChat() {  // Fonction pour réinitialiser la conversation
+    await fetch("/reset", {
+        method: "POST"
+    });
+
+    chatBox.innerHTML = `
+        <div class="message bot">
+            <div class="bubble">
+                Bonjour, je suis votre assistant en hôtellerie. Posez-moi une question sur les réservations, l’accueil client, le service ou la gestion hôtelière.
+            </div>
+        </div>
+    `;
+}
+
+userInput.addEventListener("keypress", function(event) {  // Écoute les touches clavier
+    if (event.key === "Enter") {  // Quand on appuie sur Entrer ça envoie le message automatiquement
+        sendMessage();
+    }
+});
+    
